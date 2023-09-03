@@ -13,11 +13,6 @@ export default function ListEmployeeComponent() {
         });
     }, []);
 
-    const addEmployee = () => {
-        navigateTo("/create-employee");
-    };
-    const editEmployee = () => {};
-
     const deleteEmployee = (id) => {
         //rest api call
         EmployeeService.deleteEmployee(id).then((res) => {
@@ -28,10 +23,6 @@ export default function ListEmployeeComponent() {
             });
         });
     };
-    // view employee Event Handler
-    const viewEmployee = (id) => {
-        navigateTo(`/view-employee:${id}`);
-    };
 
     return (
         <div>
@@ -39,7 +30,7 @@ export default function ListEmployeeComponent() {
             <div className="col-12">
                 <button
                     className="btn btn-primary btn-sm "
-                    onClick={addEmployee}
+                    onClick={() => navigateTo("/create-employee")}
                 >
                     Add Employee
                 </button>
@@ -64,7 +55,9 @@ export default function ListEmployeeComponent() {
                                 <td>
                                     <button
                                         onClick={() =>
-                                            editEmployee(employee.id)
+                                            navigateTo(
+                                                `/update-employee/:${employee.id}`
+                                            )
                                         }
                                         className="btn btn-info btn-sm"
                                     >
@@ -80,7 +73,9 @@ export default function ListEmployeeComponent() {
                                     </button>
                                     <button
                                         onClick={() =>
-                                            viewEmployee(employee.id)
+                                            navigateTo(
+                                                `/view-employee/:${employee.id}`
+                                            )
                                         }
                                         className="btn btn-info btn-sm"
                                     >

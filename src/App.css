@@ -1,3 +1,7 @@
+/* html {
+  background-color: #eee;
+} */
+
 .App {
   text-align: center;
 }
@@ -62,3 +66,48 @@
   text-align: center;
   color: white;
 }
+
+.card-back {
+  /* background-color: #282c34; */
+  margin: 0;
+  height: 100vh;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  z-index: 1;
+  width: 75%;
+  height: 85%;
+  background-color: #282c34;
+  margin-top: -10rem;
+
+}
+
+.card-header {
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+  margin-top: 0.5rem;
+}
+
+.form-group label {
+  width: 10rem;
+  font-weight: 500;
+}
+
+/* .modal-custom-backdrop {
+  background-color: #eee !important;
+  height: 100%;
+  z-index: -1;
+} */
